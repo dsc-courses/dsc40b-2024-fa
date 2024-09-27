@@ -496,8 +496,8 @@
             "publications": {
                 "01-time_complexity": {
                     "metadata": {
-                        "due": "2024-10-07 23:59:00",
-                        "released": "2024-10-01 00:00:00",
+                        "due": "2024-10-08 23:59:00",
+                        "released": "2024-10-02 00:00:00",
                         "topic": "Time Complexity Analysis",
                         "number": 1
                     },
@@ -505,8 +505,8 @@
                 },
                 "02-asymptotic": {
                     "metadata": {
-                        "due": "2024-10-14 23:59:00",
-                        "released": "2024-10-08 00:00:00",
+                        "due": "2024-10-15 23:59:00",
+                        "released": "2024-10-09 00:00:00",
                         "topic": "Time Complexity and Asymptotic Notation",
                         "number": 2
                     },
@@ -514,8 +514,8 @@
                 },
                 "03-recurrences-sorting": {
                     "metadata": {
-                        "due": "2024-10-21 23:59:00",
-                        "released": "2024-10-15 00:00:00",
+                        "due": "2024-10-22 23:59:00",
+                        "released": "2024-10-16 00:00:00",
                         "topic": "Recurrences and Sorting",
                         "number": 3
                     },
@@ -523,8 +523,8 @@
                 },
                 "04-quickselect-bst": {
                     "metadata": {
-                        "due": "2024-10-28 23:59:00",
-                        "released": "2024-10-22 23:59:00",
+                        "due": "2024-10-29 23:59:00",
+                        "released": "2024-10-23 23:59:00",
                         "topic": "Quickselect and BSTs",
                         "number": 4
                     },
@@ -532,8 +532,8 @@
                 },
                 "05-hashing": {
                     "metadata": {
-                        "due": "2024-11-04 23:59:00",
-                        "released": "2024-10-29 23:59:00",
+                        "due": "2024-11-05 23:59:00",
+                        "released": "2024-10-30 23:59:00",
                         "topic": "Hashing",
                         "number": 5
                     },
@@ -541,8 +541,8 @@
                 },
                 "06-graphs": {
                     "metadata": {
-                        "due": "2024-11-11 23:59:00",
-                        "released": "2024-11-05 23:59:00",
+                        "due": "2024-11-12 23:59:00",
+                        "released": "2024-11-06 23:59:00",
                         "topic": "Graph Theory and BFS",
                         "number": 6
                     },
@@ -550,8 +550,8 @@
                 },
                 "07-bfs-dfs": {
                     "metadata": {
-                        "due": "2024-11-18 23:59:00",
-                        "released": "2024-11-12 23:59:00",
+                        "due": "2024-11-19 23:59:00",
+                        "released": "2024-11-13 23:59:00",
                         "topic": "BFS and DFS",
                         "number": 7
                     },
