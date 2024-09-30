@@ -72,7 +72,14 @@
                         "topic": "Asymptotic Time Complexity, pt. I",
                         "number": 2
                     },
-                    "artifacts": {}
+                    "artifacts": {
+                        "slides.pdf": {
+                            "path": "lectures/02-time_complexity-pt_I/slides.pdf"
+                        },
+                        "slides-marked.pdf": {
+                            "path": "lectures/02-time_complexity-pt_I/slides-marked.pdf"
+                        }
+                    }
                 },
                 "03-time_complexity-pt_II": {
                     "metadata": {
