@@ -384,7 +384,7 @@
                 "01-time_complexity": {
                     "metadata": {
                         "due": "2024-10-04 23:59:00",
-                        "ready": false,
+                        "ready": true,
                         "released": "2024-09-29 00:00:00",
                         "topic": "Time Complexity Analysis",
                         "number": 1
@@ -394,7 +394,7 @@
                 "02-asymptotic": {
                     "metadata": {
                         "due": "2024-10-11 23:59:00",
-                        "ready": true,
+                        "ready": false,
                         "released": "2024-10-06 00:00:00",
                         "topic": "Time Complexity and Asymptotic Notation",
                         "number": 2
@@ -508,7 +508,14 @@
                         "topic": "Time Complexity Analysis",
                         "number": 1
                     },
-                    "artifacts": {}
+                    "artifacts": {
+                        "homework.pdf": {
+                            "path": "homeworks/01-time_complexity/homework.pdf"
+                        },
+                        "template.zip": {
+                            "path": "homeworks/01-time_complexity/template.zip"
+                        }
+                    }
                 },
                 "02-asymptotic": {
                     "metadata": {
