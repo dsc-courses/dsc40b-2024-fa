@@ -385,7 +385,7 @@
                     "metadata": {
                         "due": "2024-10-04 23:59:00",
                         "ready": true,
-                        "released": "2024-09-29 00:00:00",
+                        "released": "2024-10-01 00:00:00",
                         "topic": "Time Complexity Analysis",
                         "number": 1
                     },
@@ -395,7 +395,7 @@
                     "metadata": {
                         "due": "2024-10-11 23:59:00",
                         "ready": false,
-                        "released": "2024-10-06 00:00:00",
+                        "released": "2024-10-08 00:00:00",
                         "topic": "Time Complexity and Asymptotic Notation",
                         "number": 2
                     },
