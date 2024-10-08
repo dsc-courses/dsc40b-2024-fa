@@ -110,7 +110,11 @@
                             }
                         ]
                     },
-                    "artifacts": {}
+                    "artifacts": {
+                        "slides.pdf": {
+                            "path": "lectures/04-expected_time/slides.pdf"
+                        }
+                    }
                 },
                 "05-binary_search-recurrences": {
                     "metadata": {
