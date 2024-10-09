@@ -126,7 +126,11 @@
                         "topic": "Recurrences and Binary Search",
                         "number": 5
                     },
-                    "artifacts": {}
+                    "artifacts": {
+                        "slides.pdf": {
+                            "path": "lectures/05-binary_search-recurrences/slides.pdf"
+                        }
+                    }
                 },
                 "06-sorting": {
                     "metadata": {
