@@ -129,6 +129,9 @@
                     "artifacts": {
                         "slides.pdf": {
                             "path": "lectures/05-binary_search-recurrences/slides.pdf"
+                        },
+                        "slides-marked.pdf": {
+                            "path": "lectures/05-binary_search-recurrences/slides-marked.pdf"
                         }
                     }
                 },
