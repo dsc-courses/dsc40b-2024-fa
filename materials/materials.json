@@ -537,6 +537,9 @@
                         "homework.pdf": {
                             "path": "homeworks/01-time_complexity/homework.pdf"
                         },
+                        "solution.pdf": {
+                            "path": "homeworks/01-time_complexity/solution.pdf"
+                        },
                         "template.zip": {
                             "path": "homeworks/01-time_complexity/template.zip"
                         }
