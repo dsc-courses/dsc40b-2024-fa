@@ -142,7 +142,11 @@
                         "topic": "Sorting",
                         "number": 6
                     },
-                    "artifacts": {}
+                    "artifacts": {
+                        "slides.pdf": {
+                            "path": "lectures/06-sorting/slides.pdf"
+                        }
+                    }
                 },
                 "07-quickselect": {
                     "metadata": {
@@ -439,7 +443,7 @@
                 "03-recurrences-sorting": {
                     "metadata": {
                         "due": "2024-10-18 23:59:00",
-                        "ready": false,
+                        "ready": true,
                         "released": "2024-10-13 00:00:00",
                         "topic": "Binary Search, Recurrences, Sorting",
                         "number": 3
