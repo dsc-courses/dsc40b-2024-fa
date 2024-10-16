@@ -164,7 +164,11 @@
                         "topic": "Quickselect",
                         "number": 7
                     },
-                    "artifacts": {}
+                    "artifacts": {
+                        "slides.pdf": {
+                            "path": "lectures/07-quickselect/slides.pdf"
+                        }
+                    }
                 },
                 "08-bst": {
                     "metadata": {
