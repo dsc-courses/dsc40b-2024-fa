@@ -145,6 +145,9 @@
                     "artifacts": {
                         "slides.pdf": {
                             "path": "lectures/06-sorting/slides.pdf"
+                        },
+                        "slides-marked.pdf": {
+                            "path": "lectures/06-sorting/slides-marked.pdf"
                         }
                     }
                 },
