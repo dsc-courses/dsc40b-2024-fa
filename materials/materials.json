@@ -140,7 +140,13 @@
                         "reading": "Section 2.1 and 2.3",
                         "date": "2024-10-15",
                         "topic": "Sorting",
-                        "number": 6
+                        "number": 6,
+                        "videos": [
+                            {
+                                "title": "Using sorted structure to solve the movie problem efficiently",
+                                "url": "https://youtu.be/Y6j1RweAI_I?t=3689"
+                            }
+                        ]
                     },
                     "artifacts": {
                         "slides.pdf": {
