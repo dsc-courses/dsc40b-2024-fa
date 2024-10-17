@@ -167,6 +167,9 @@
                     "artifacts": {
                         "slides.pdf": {
                             "path": "lectures/07-quickselect/slides.pdf"
+                        },
+                        "slides-marked.pdf": {
+                            "path": "lectures/07-quickselect/slides-marked.pdf"
                         }
                     }
                 },
