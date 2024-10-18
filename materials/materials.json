@@ -352,7 +352,11 @@
                         "number": 3,
                         "recording": null
                     },
-                    "artifacts": {}
+                    "artifacts": {
+                        "discussion.pdf": {
+                            "path": "discussions/03-recursion_sorting/discussion.pdf"
+                        }
+                    }
                 },
                 "04-midterm_01_review": {
                     "metadata": {
@@ -585,6 +589,9 @@
                     "artifacts": {
                         "homework.pdf": {
                             "path": "homeworks/02-asymptotic/homework.pdf"
+                        },
+                        "solution.pdf": {
+                            "path": "homeworks/02-asymptotic/solution.pdf"
                         },
                         "template.zip": {
                             "path": "homeworks/02-asymptotic/template.zip"
