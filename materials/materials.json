@@ -180,7 +180,11 @@
                         "topic": "Binary Search Trees",
                         "number": 8
                     },
-                    "artifacts": {}
+                    "artifacts": {
+                        "slides.pdf": {
+                            "path": "lectures/08-bst/slides.pdf"
+                        }
+                    }
                 },
                 "09-hashing": {
                     "metadata": {
