@@ -484,7 +484,7 @@
                 "04-quickselect-bst": {
                     "metadata": {
                         "due": "2024-10-25 23:59:00",
-                        "ready": false,
+                        "ready": true,
                         "released": "2024-10-20 00:00:00",
                         "topic": "Quickselect and BSTs",
                         "number": 4
