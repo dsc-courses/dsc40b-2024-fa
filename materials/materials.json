@@ -183,6 +183,9 @@
                     "artifacts": {
                         "slides.pdf": {
                             "path": "lectures/08-bst/slides.pdf"
+                        },
+                        "slides-marked.pdf": {
+                            "path": "lectures/08-bst/slides-marked.pdf"
                         }
                     }
                 },
