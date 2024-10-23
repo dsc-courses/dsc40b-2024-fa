@@ -435,6 +435,167 @@ def foo(arr, stop=None):
 
 
 
+
+        <div class="problem-outer">
+        <h2>Problem #174</h2>
+        <p>Tags: <a href='../tags/recurrence relations.html'>recurrence relations</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>Solve the below recurrence, stating the solution in asymptotic notation. Show your work.</p>
+<div class="math">\[
+        T(n) =
+        \begin{cases}
+            T(n/2) + \Theta(n) & n > 1 \\
+            \Theta(1) & n = 1
+        \end{cases}\]</div>
+<details>
+    <summary>Solution</summary>
+<p><span class="math">\(\Theta(n)\)</span>.</p>
+<p>Unrolling several times, we find:</p>
+<center><div class="image"><img src="../images/174/plot1.png" /></div></center>
+<p>On the <span class="math">\(k\)</span>th unroll, we'll get:</p>
+<div class="math">\[
+            T(n) = T(n/2^k) + \left[                n + \frac{n}{2} + \frac{n}{4} + \ldots + \frac{n}{2^{k-1}}\right]\]</div>
+<p>It will take <span class="math">\(\log_2 n\)</span> unrolls to each the base case. Substituting this for <span class="math">\(k\)</span>, we get:</p>
+<center><div class="image"><img src="../images/174/plot2.png" /></div></center>
+</details>
+
+    </div>
+</div>
+
+        </div>
+
+
+
+
+        <div class="problem-outer">
+        <h2>Problem #178</h2>
+        <p>Tags: <a href='../tags/recurrence relations.html'>recurrence relations</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>State (but do not solve) the recurrence describing the runtime of the following function.</p>
+<pre class="code"><code>
+def boo(n):
+    if n <= 1:
+        return
+
+    for i in range(3):
+        boo(n/4)
+
+    for j in range(n):
+        print(j)
+
+</code></pre>
+
+<p><span class="math">\(
+        T(n) = \begin{cases}
+            \Theta(1), & n = 1\\
+             & n > 1
+        \end{cases}\)</span></p>
+<details>
+    <summary>Solution</summary>
+<p>Even though the recursive calls are made in a <span class="inline-code"><code>for</code></span>-loop, the basic idea is the same: there will be three recursive calls, each on arrays of size <span class="math">\(n/4\)</span>, and thus the recurrence will involve <span class="math">\(3 T(n/4)\)</span>. There is <span class="math">\(\Theta(n)\)</span> work done outside the recursive calls, for a full recurrence of <span class="math">\(T(n) = 3 T(n/4) + \Theta(n)\)</span>.</p>
+</details>
+
+    </div>
+</div>
+
+        </div>
+
+
+
+
+        <div class="problem-outer">
+        <h2>Problem #201</h2>
+        <p>Tags: <a href='../tags/recurrence relations.html'>recurrence relations</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>Solve the below recurrence, stating the solution in asymptotic notation. You do not need to show your work (and your work won't be graded for partial credit, so be careful!).</p>
+<div class="math">\[
+        T(n) =
+        \begin{cases}
+            T(n/3) + \Theta(n) & n > 1 \\
+            \Theta(1) & n = 1
+        \end{cases}\]</div>
+<p>
+<span class="inline-response-box">
+    <span id="answer-1dc32829-a994-4eed-91cf-4bb3579bd4cf" style="display: none"><span class="math">\(\Theta(n)\)</span></span>
+    <span id="button-1dc32829-a994-4eed-91cf-4bb3579bd4cf">
+        <button
+            type="button"
+            onclick="
+                document.getElementById('answer-1dc32829-a994-4eed-91cf-4bb3579bd4cf').style.display = 'inline-block';
+                document.getElementById('button-1dc32829-a994-4eed-91cf-4bb3579bd4cf').style.display = 'none'
+            "
+        >
+            Show Answer
+        </button>
+    </span>
+</span>
+</p>
+<details>
+    <summary>Solution</summary>
+<p><span class="math">\(\Theta(n)\)</span>.</p>
+<p>Unrolling several times, we find:</p>
+<center><div class="image"><img src="../images/201/plot1.png" /></div></center>
+<p>On the <span class="math">\(k\)</span>th unroll, we'll get:</p>
+<div class="math">\[
+            T(n) = T(n/3^k) + \left[                n + \frac{n}{3} + \frac{n}{9} + \ldots + \frac{n}{3^{k-1}}\right]\]</div>
+<p>It will take <span class="math">\(\log_3 n\)</span> unrolls to each the base case. Substituting this for <span class="math">\(k\)</span>, we get:</p>
+<center><div class="image"><img src="../images/201/plot2.png" /></div></center>
+</details>
+
+    </div>
+</div>
+
+        </div>
+
+
+
+
+        <div class="problem-outer">
+        <h2>Problem #202</h2>
+        <p>Tags: <a href='../tags/recurrence relations.html'>recurrence relations</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>State (but do not solve) the recurrence describing the runtime of the following function.</p>
+<pre class="code"><code>
+def foo(n):
+    if n <= 1:
+        return
+
+    foo(n // 2)
+
+    for j in range(n):
+        print(j)
+
+    foo(n // 2)
+
+</code></pre>
+
+<p>
+<span class="inline-response-box">
+    <span id="answer-66b413e5-2fcd-4aa9-b9bf-f4d54100fc2b" style="display: none"><span class="math">\(\Theta(n \log n)\)</span></span>
+    <span id="button-66b413e5-2fcd-4aa9-b9bf-f4d54100fc2b">
+        <button
+            type="button"
+            onclick="
+                document.getElementById('answer-66b413e5-2fcd-4aa9-b9bf-f4d54100fc2b').style.display = 'inline-block';
+                document.getElementById('button-66b413e5-2fcd-4aa9-b9bf-f4d54100fc2b').style.display = 'none'
+            "
+        >
+            Show Answer
+        </button>
+    </span>
+</span>
+</p>
+    </div>
+</div>
+
+        </div>
+
+
+
                     </main>
                 </div>
             </div>

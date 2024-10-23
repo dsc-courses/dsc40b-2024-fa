@@ -217,6 +217,60 @@
 
 
 
+
+        <div class="problem-outer">
+        <h2>Problem #211</h2>
+        <p>Tags: <a href='../tags/connected components.html'>connected components</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>Let <span class="math">\(G = (V,E)\)</span> be an undirected graph with:</p>
+<center><div class="image"><img src="../images/211/plot.png" /></div></center>
+<p>True or False: <span class="math">\(\{b, d, g\}\)</span> is a connected component of this graph.</p>
+
+<div class="true-false">
+    <input type="radio" name="true-false" value="true" /> True
+    <input type="radio" name="true-false" value="false" /> False
+</div>
+
+<details>
+    <summary>Solution</summary>
+<p>False. The connected components of this graph are <span class="math">\(\{a, e, f\}\)</span> and <span class="math">\(\{b, c, d, g, h\}\)</span>.</p>
+<p>Remember: a connected component has to contain <i>all</i> nodes reachable from any node in the component. While <span class="math">\(b\)</span>, <span class="math">\(d\)</span>, and <span class="math">\(g\)</span> are all reachable from one another (and are ``connected''), they do not form a connected component because there are more nodes reachable from this group: namely, <span class="math">\(h\)</span> and <span class="math">\(c\)</span>.</p>
+</details>
+
+    </div>
+</div>
+
+        </div>
+
+
+
+
+        <div class="problem-outer">
+        <h2>Problem #221</h2>
+        <p>Tags: <a href='../tags/connected components.html'>connected components</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>Let <span class="math">\(G\)</span> be an undirected graph, and suppose <span class="math">\(u\)</span> and <span class="math">\(v\)</span> are two nodes belonging to the same connected component of <span class="math">\(G\)</span>, with <span class="math">\(v\)</span> being a neighbor of <span class="math">\(u\)</span>. That is, the edge <span class="math">\((u, v)\)</span> is in <span class="math">\(G\)</span>.</p>
+<p>Let <span class="math">\(G'\)</span> be the graph obtained from <span class="math">\(G\)</span> by deleting the edge <span class="math">\((u, v)\)</span>. True or False: <span class="math">\(u\)</span> and <span class="math">\(v\)</span> must still be in the same connected component of the new graph, <span class="math">\(G'\)</span>.</p>
+
+<div class="true-false">
+    <input type="radio" name="true-false" value="true" /> True
+    <input type="radio" name="true-false" value="false" /> False
+</div>
+
+<details>
+    <summary>Solution</summary>
+<p>False</p>
+</details>
+
+    </div>
+</div>
+
+        </div>
+
+
+
                     </main>
                 </div>
             </div>

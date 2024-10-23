@@ -110,149 +110,24 @@
                         </div>
 
                         
-<h1>Problems tagged with "quickselect"</h1>
+<h1>Problems tagged with "shortest path"</h1>
 
 
         <div class="problem-outer">
-        <h2>Problem #048</h2>
-        <p>Tags: <a href='../tags/quickselect.html'>quickselect</a></p>
+        <h2>Problem #231</h2>
+        <p>Tags: <a href='../tags/shortest path.html'>shortest path</a>, <a href='../tags/graph theory.html'>graph theory</a></p>
         <div class="problem">
     <div class="problem-body">
-<p>True or False: <span class="inline-code"><code>quickselect</code></span> requires the input array to be sorted in order to function correctly.</p>
-
-<div class="true-false">
-    <input type="radio" name="true-false" value="true" /> True
-    <input type="radio" name="true-false" value="false" /> False
-</div>
-
+<p>Suppose an undirected, connected graph has <span class="math">\(n\)</span> nodes, half of which are colored red and the other half are colored blue. Each red node is neighbors with <span class="math">\(n/4\)</span> blue nodes, and each blue node is neighbors with <span class="math">\(n/4\)</span> red nodes. There are no edges between nodes of the same color.</p>
+<p>What is the time complexity of computing a shortest path from a given red node to all other red nodes using BFS?</p>
+<div class="multiple-choices"><form><div class="choice"><label><input name="choice" class="choice" type="radio" /><p><span class="math">\(\Theta(1)\)</span></p></label></div>
+<div class="choice"><label><input name="choice" class="choice" type="radio" /><p><span class="math">\(\Theta(n)\)</span></p></label></div>
+<div class="choice"><label><input name="choice" class="choice" type="radio" /><p><span class="math">\(\Theta(n \log n)\)</span></p></label></div>
+<div class="choice"><label><input name="choice" class="choice" type="radio" /><p><span class="math">\(\Theta(n^2)\)</span></p></label></div></form></div>
 <details>
     <summary>Solution</summary>
-<p>False.</p>
+<p><span class="math">\(\Theta(n^2)\)</span></p>
 </details>
-
-    </div>
-</div>
-
-        </div>
-
-
-
-
-        <div class="problem-outer">
-        <h2>Problem #075</h2>
-        <p>Tags: <a href='../tags/loop invariants.html'>loop invariants</a>, <a href='../tags/quickselect.html'>quickselect</a></p>
-        <div class="problem">
-    <div class="problem-body">
-<p>Recall the partition operation from <span class="inline-code"><code>quickselect</code></span>. Which of the following arrays could have been partitioned at least once? Select all that apply.</p>
-<div class="multiple-select"><div class="choice"><label><input name="choice" class="choice" type="checkbox" /><p><span class="inline-code"><code>[50, 10, 20, 30, 60, 40]</code></span></p></label></div>
-<div class="choice"><label><input name="choice" class="choice" type="checkbox" /><p><span class="inline-code"><code>[20, 10, 30, 60, 40, 50]</code></span></p></label></div>
-<div class="choice"><label><input name="choice" class="choice" type="checkbox" /><p><span class="inline-code"><code>[20, 50, 10, 40, 30, 60]</code></span></p></label></div>
-<div class="choice"><label><input name="choice" class="choice" type="checkbox" /><p><span class="inline-code"><code>[60, 50, 40, 30, 20, 10]</code></span></p></label></div>
-<div class="choice"><label><input name="choice" class="choice" type="checkbox" /><p><span class="inline-code"><code>[10, 20, 30, 40, 50, 60]</code></span></p></label></div></div>
-<details>
-    <summary>Solution</summary>
-<p>The second, third, and last all should be selected.</p>
-</details>
-
-    </div>
-</div>
-
-        </div>
-
-
-
-
-        <div class="problem-outer">
-        <h2>Problem #086</h2>
-        <p>Tags: <a href='../tags/quickselect.html'>quickselect</a></p>
-        <div class="problem">
-    <div class="problem-body">
-<p>True or False: in order to guarantee that its output is correct, <span class="inline-code"><code>quickselect</code></span> must be called on a sorted list.</p>
-
-<div class="true-false">
-    <input type="radio" name="true-false" value="true" /> True
-    <input type="radio" name="true-false" value="false" /> False
-</div>
-
-<details>
-    <summary>Solution</summary>
-<p>False.</p>
-</details>
-
-    </div>
-</div>
-
-        </div>
-
-
-
-
-        <div class="problem-outer">
-        <h2>Problem #183</h2>
-        <p>Tags: <a href='../tags/quickselect.html'>quickselect</a></p>
-        <div class="problem">
-    <div class="problem-body">
-<p>The code for <span class="inline-code"><code>quickselect</code></span> is shown below. It is the same as the code provided in lecture, except that it contains an added <span class="inline-code"><code>print</code></span> statement.</p>
-<pre class="code"><code>
-
-import random 
-def quickselect(arr, k, start, stop):
-    """Finds kth order statistic in numbers[start:stop])"""
-    print("hello world!") # <--- here is the print
-    pivot_ix = random.randrange(start, stop)
-    pivot_ix = partition(arr, start, stop, pivot_ix)
-    pivot_order = pivot_ix + 1
-    if pivot_order == k:
-        return arr[pivot_ix]
-    elif pivot_order < k:
-        return quickselect(arr, k, pivot_ix + 1, stop)
-    else:
-        return quickselect(arr, k, start, pivot_ix)
-
-</code></pre>
-
-<p>Suppose <span class="inline-code"><code>quickselect(arr, 3, 0, 10)</code></span> is called with <span class="inline-code"><code>arr = [5, 2, 8, 3, 1, 6, 9, 7, 4, 0]</code></span>.</p>
-<div class="subproblem">
-    <h3 class="subproblem-id">Part 1)</h3>
-<p>What is the <b>fewest</b> number of times that ``hello world!'' can possibly be printed? Your answer should be a number, and not in terms of <span class="math">\(n\)</span>.</p>
-<p>
-<span class="inline-response-box">
-    <span id="answer-2912781c-372c-4219-9f8d-acc119fa1533" style="display: none">1</span>
-    <span id="button-2912781c-372c-4219-9f8d-acc119fa1533">
-        <button
-            type="button"
-            onclick="
-                document.getElementById('answer-2912781c-372c-4219-9f8d-acc119fa1533').style.display = 'inline-block';
-                document.getElementById('button-2912781c-372c-4219-9f8d-acc119fa1533').style.display = 'none'
-            "
-        >
-            Show Answer
-        </button>
-    </span>
-</span>
-</p>
-</div>
-
-<div class="subproblem">
-    <h3 class="subproblem-id">Part 2)</h3>
-<p>What is the <b>greatest</b> number of times that ``hello world'' can possibly be printed? Your answer should be a number, and not in terms of <span class="math">\(n\)</span>.</p>
-<p>
-<span class="inline-response-box">
-    <span id="answer-1f74a040-0b7b-4529-83ec-1fc5e25414db" style="display: none">10</span>
-    <span id="button-1f74a040-0b7b-4529-83ec-1fc5e25414db">
-        <button
-            type="button"
-            onclick="
-                document.getElementById('answer-1f74a040-0b7b-4529-83ec-1fc5e25414db').style.display = 'inline-block';
-                document.getElementById('button-1f74a040-0b7b-4529-83ec-1fc5e25414db').style.display = 'none'
-            "
-        >
-            Show Answer
-        </button>
-    </span>
-</span>
-</p>
-</div>
 
     </div>
 </div>

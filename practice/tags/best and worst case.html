@@ -355,6 +355,247 @@ def foo(arr):
 
 
 
+
+        <div class="problem-outer">
+        <h2>Problem #167</h2>
+        <p>Tags: <a href='../tags/best and worst case.html'>best and worst case</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>The code below takes in two lists, each containing <span class="math">\(n\)</span> integers, and determines if the any number in the second list appears at least <span class="math">\(n/2\)</span> times in the first list.</p>
+<pre class="code"><code>
+def boo(first_list, second_list):
+    """first_list and second_list are both of size n"""
+    n = len(first_list)
+    for x in second_list:
+        count = 0
+        for y in first_list:
+            if x == y:
+                count += 1
+            if count >= n // 2:
+                return True
+    return False
+
+
+print(boo([1, 6, 6, 4, 6], [6, 7, 8, 9, 10]))
+
+</code></pre>
+
+<div class="subproblem">
+    <h3 class="subproblem-id">Part 1)</h3>
+<p>What is the <b>best case</b> time complexity of this code as a function of <span class="math">\(n\)</span>? State your answer using asymptotic notation.</p>
+<p>
+<span class="inline-response-box">
+    <span id="answer-3a537095-8c66-4673-bcea-f10f0fbc7718" style="display: none"><span class="math">\(\Theta(n)\)</span></span>
+    <span id="button-3a537095-8c66-4673-bcea-f10f0fbc7718">
+        <button
+            type="button"
+            onclick="
+                document.getElementById('answer-3a537095-8c66-4673-bcea-f10f0fbc7718').style.display = 'inline-block';
+                document.getElementById('button-3a537095-8c66-4673-bcea-f10f0fbc7718').style.display = 'none'
+            "
+        >
+            Show Answer
+        </button>
+    </span>
+</span>
+</p>
+</div>
+
+<div class="subproblem">
+    <h3 class="subproblem-id">Part 2)</h3>
+<p>What is the <b>worst case</b> time complexity of this code as a function of <span class="math">\(n\)</span>? State your answer using asymptotic notation.</p>
+<p>
+<span class="inline-response-box">
+    <span id="answer-186524e1-e7f0-461f-8a10-94db01edcecd" style="display: none"><span class="math">\(\Theta(n^2)\)</span></span>
+    <span id="button-186524e1-e7f0-461f-8a10-94db01edcecd">
+        <button
+            type="button"
+            onclick="
+                document.getElementById('answer-186524e1-e7f0-461f-8a10-94db01edcecd').style.display = 'inline-block';
+                document.getElementById('button-186524e1-e7f0-461f-8a10-94db01edcecd').style.display = 'none'
+            "
+        >
+            Show Answer
+        </button>
+    </span>
+</span>
+</p>
+</div>
+
+<details>
+    <summary>Solution</summary>
+<p>The best case is when the first element of the second list appears at least <span class="math">\(n/2\)</span> times in the first list. In this case, the code will return <span class="inline-code"><code>True</code></span> after iterating <span class="math">\(n/2\)</span> times through the inner loop, taking <span class="math">\(\Theta(n)\)</span> time total.</p>
+<p>In the worst case, there is no element in the second list that appears <span class="math">\(n/2\)</span> times in the first. We make all <span class="math">\(n\)</span> iterations of the outer loop, and during each of the outer iterations, make <span class="math">\(n\)</span> iterations of the inner loop, for a total of <span class="math">\(\Theta(n^2)\)</span> time.</p>
+</details>
+
+    </div>
+</div>
+
+        </div>
+
+
+
+
+        <div class="problem-outer">
+        <h2>Problem #181</h2>
+        <p>Tags: <a href='../tags/best and worst case.html'>best and worst case</a>, <a href='../tags/theoretical lower bounds.html'>theoretical lower bounds</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>Consider the following problem: given two <b>sorted</b> lists, <span class="inline-code"><code>A</code></span> and <span class="inline-code"><code>B</code></span>, each containing <span class="math">\(n\)</span> numbers, determine if the two lists share an element in common. That is, determine if there is a number <span class="math">\(x\)</span> which appears in both lists.</p>
+<div class="subproblem">
+    <h3 class="subproblem-id">Part 1)</h3>
+<p>What is a <b>tight</b> theoretical lower bound for this problem? Again, you may assume that the lists are both sorted. State your answer in asymptotic notation as a function of <span class="math">\(n\)</span>.</p>
+<p>
+<span class="inline-response-box">
+    <span id="answer-5073fc19-640c-460a-b0bc-cbb41a6c7d7c" style="display: none"><span class="math">\(\Theta(n)\)</span></span>
+    <span id="button-5073fc19-640c-460a-b0bc-cbb41a6c7d7c">
+        <button
+            type="button"
+            onclick="
+                document.getElementById('answer-5073fc19-640c-460a-b0bc-cbb41a6c7d7c').style.display = 'inline-block';
+                document.getElementById('button-5073fc19-640c-460a-b0bc-cbb41a6c7d7c').style.display = 'none'
+            "
+        >
+            Show Answer
+        </button>
+    </span>
+</span>
+</p>
+</div>
+
+<div class="subproblem">
+    <h3 class="subproblem-id">Part 2)</h3>
+<p>(2 points) Briefly (in 50 words or less) describe an algorithm for solving this problem <b>and state its worst case time complexity</b>. To earn full credit, you should give the optimal algorithm, but partial credit will be awarded for sub-optimal solutions. You may write pseudocode if you like, but an explanation in words is also sufficient. Make sure that you only state one algorithm!</p>
+<details>
+    <summary>Solution</summary>
+<p>Here's an approach that takes <span class="math">\(\Theta(n)\)</span>; it's similar to what we did in lecture for the movie problem.</p>
+<p>Start with <span class="inline-code"><code>i = j = 0</code></span>. If <span class="inline-code"><code>A[i] == A[j]</code></span>, return <span class="inline-code"><code>True</code></span>, since you've found an element in common. If <span class="inline-code"><code>A[i] > A[j]</code></span>, increment <span class="inline-code"><code>j</code></span>, otherwise increment <span class="inline-code"><code>i</code></span>. Takes <span class="math">\(\Theta(n)\)</span> time.</p>
+<p>The brute force approach also earns credit: Loop over all pairs, checking if <span class="inline-code"><code>A[i] == B[j]</code></span> for each pair. This takes <span class="math">\(\Theta(n^2)\)</span> time.</p>
+</details>
+
+</div>
+
+    </div>
+</div>
+
+        </div>
+
+
+
+
+        <div class="problem-outer">
+        <h2>Problem #191</h2>
+        <p>Tags: <a href='../tags/best and worst case.html'>best and worst case</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>The code below takes in two lists, each containing <span class="math">\(n\)</span> integers.</p>
+<pre class="code"><code>
+def are_lists_equal(list1, list2):
+    if len(list1) != len(list2):
+        return False
+    for i in range(len(list1)):
+        if list1[i] != list2[j]:
+            return False
+    return True
+
+
+def foo(list1, list2):
+    if are_lists_equal(list1, list2):
+        for i in list1:
+            print(i)
+    else:
+        for i in list1:
+            for j in list2:
+                for k in range(len(list1)):
+                    print(i, j, k)
+
+</code></pre>
+
+<p>What is the best case time complexity of <span class="inline-code"><code>foo</code></span> as a function of <span class="math">\(n\)</span>? State your answer using asymptotic notation.</p>
+<p>
+<span class="inline-response-box">
+    <span id="answer-871ee654-356c-402e-8385-a916df42bf1e" style="display: none"><span class="math">\(\Theta(n)\)</span></span>
+    <span id="button-871ee654-356c-402e-8385-a916df42bf1e">
+        <button
+            type="button"
+            onclick="
+                document.getElementById('answer-871ee654-356c-402e-8385-a916df42bf1e').style.display = 'inline-block';
+                document.getElementById('button-871ee654-356c-402e-8385-a916df42bf1e').style.display = 'none'
+            "
+        >
+            Show Answer
+        </button>
+    </span>
+</span>
+</p>
+<details>
+    <summary>Solution</summary>
+<p>The best case is where the lists are equal. In this case the time complexity is <span class="math">\(\Theta(n)\)</span>. The worst case is when the lists are not equal in which case the time complexity is <span class="math">\(\Theta(n^3)\)</span>.</p>
+</details>
+
+    </div>
+</div>
+
+        </div>
+
+
+
+
+        <div class="problem-outer">
+        <h2>Problem #204</h2>
+        <p>Tags: <a href='../tags/best and worst case.html'>best and worst case</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>In this problem, assume that <span class="math">\(A\)</span> and <span class="math">\(B\)</span> are <b>sorted</b> lists, each containing <span class="math">\(n\)</span> numbers.</p>
+<div class="subproblem">
+    <h3 class="subproblem-id">Part 1)</h3>
+<p>What is the best possible (worst case) time complexity of any algorithm for finding the <b>smallest</b> difference between a number in <span class="math">\(A\)</span> and a number in <span class="math">\(B\)</span>?</p>
+<p>
+<span class="inline-response-box">
+    <span id="answer-ec920d67-31b7-49ab-b849-37f48bc0b75d" style="display: none"><span class="math">\(\Theta(n)\)</span></span>
+    <span id="button-ec920d67-31b7-49ab-b849-37f48bc0b75d">
+        <button
+            type="button"
+            onclick="
+                document.getElementById('answer-ec920d67-31b7-49ab-b849-37f48bc0b75d').style.display = 'inline-block';
+                document.getElementById('button-ec920d67-31b7-49ab-b849-37f48bc0b75d').style.display = 'none'
+            "
+        >
+            Show Answer
+        </button>
+    </span>
+</span>
+</p>
+</div>
+
+<div class="subproblem">
+    <h3 class="subproblem-id">Part 2)</h3>
+<p>What is the best possible (worst case) time complexity of any algorithm for finding the <b>biggest</b> difference between a number in <span class="math">\(A\)</span> and a number in <span class="math">\(B\)</span>?</p>
+</div>
+
+<p>
+<span class="inline-response-box">
+    <span id="answer-67e7924b-b55d-43ea-8862-3bb34b352224" style="display: none"><span class="math">\(\Theta(1)\)</span></span>
+    <span id="button-67e7924b-b55d-43ea-8862-3bb34b352224">
+        <button
+            type="button"
+            onclick="
+                document.getElementById('answer-67e7924b-b55d-43ea-8862-3bb34b352224').style.display = 'inline-block';
+                document.getElementById('button-67e7924b-b55d-43ea-8862-3bb34b352224').style.display = 'none'
+            "
+        >
+            Show Answer
+        </button>
+    </span>
+</span>
+</p>
+    </div>
+</div>
+
+        </div>
+
+
+
                     </main>
                 </div>
             </div>

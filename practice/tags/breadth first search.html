@@ -456,6 +456,202 @@ def modified_bfs(graph, source, status=None):
 
 
 
+
+        <div class="problem-outer">
+        <h2>Problem #215</h2>
+        <p>Tags: <a href='../tags/breadth first search.html'>breadth first search</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>Suppose a breadth first search on an undirected, connected graph is paused at a particular moment in time and the node statuses are printed. Suppose it is found that all nodes which are distance 6 from the source are marked ``visited''.</p>
+<p>True or False: it is possible that there is a node, distance 7 from the source, whose status is ``undiscovered''.</p>
+
+<div class="true-false">
+    <input type="radio" name="true-false" value="true" /> True
+    <input type="radio" name="true-false" value="false" /> False
+</div>
+
+<details>
+    <summary>Solution</summary>
+<p>False</p>
+</details>
+
+    </div>
+</div>
+
+        </div>
+
+
+
+
+        <div class="problem-outer">
+        <h2>Problem #218</h2>
+        <p>Tags: <a href='../tags/breadth first search.html'>breadth first search</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>Suppose a breadth first search (BFS) is performed on the graph shown below using node <span class="math">\(a\)</span> as the source. Which node will be the BFS predecessor of node <span class="math">\(h\)</span> when the search is complete? You should use the convention that neighbors are produced in alphabetical order.</p>
+<center><div class="image"><img src="../images/218/graph.png" /></div></center>
+<p>
+<span class="inline-response-box">
+    <span id="answer-832ddf3a-5f22-4015-a8f5-a067805cf041" style="display: none"><span class="math">\(d\)</span></span>
+    <span id="button-832ddf3a-5f22-4015-a8f5-a067805cf041">
+        <button
+            type="button"
+            onclick="
+                document.getElementById('answer-832ddf3a-5f22-4015-a8f5-a067805cf041').style.display = 'inline-block';
+                document.getElementById('button-832ddf3a-5f22-4015-a8f5-a067805cf041').style.display = 'none'
+            "
+        >
+            Show Answer
+        </button>
+    </span>
+</span>
+</p>
+    </div>
+</div>
+
+        </div>
+
+
+
+
+        <div class="problem-outer">
+        <h2>Problem #228</h2>
+        <p>Tags: <a href='../tags/breadth first search.html'>breadth first search</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>Consider the following modification of BFS, with an added print statement:</p>
+<pre class="code"><code>
+
+from collections import deque
+
+def modified_bfs(graph, source):
+    """Start a BFS at `source`."""
+    status = {node: 'undiscovered' for node in graph.nodes}
+    status[source] = 'pending'
+    pending = deque([source])
+
+    while pending:
+        u = pending.popleft()
+        for v in graph.neighbors(u):
+            if v == 9:
+                print("Here!") # <-- this is the added print statement
+            if status[v] == 'undiscovered':
+                status[v] = 'pending'
+                pending.append(v)
+
+        status[u] = 'visited'
+
+
+</code></pre>
+
+<p>Consider running this algorithm on the following graph, starting at node <span class="math">\(1\)</span>:</p>
+<center><div class="image"><img src="../images/228/graph.png" /></div></center>
+<p>How many times will <span class="inline-code"><code>"Here!"</code></span> be printed?</p>
+<p>
+<span class="inline-response-box">
+    <span id="answer-3c5ef0d6-4605-468e-b1a0-d1dfa94ce126" style="display: none">2</span>
+    <span id="button-3c5ef0d6-4605-468e-b1a0-d1dfa94ce126">
+        <button
+            type="button"
+            onclick="
+                document.getElementById('answer-3c5ef0d6-4605-468e-b1a0-d1dfa94ce126').style.display = 'inline-block';
+                document.getElementById('button-3c5ef0d6-4605-468e-b1a0-d1dfa94ce126').style.display = 'none'
+            "
+        >
+            Show Answer
+        </button>
+    </span>
+</span>
+</p>
+    </div>
+</div>
+
+        </div>
+
+
+
+
+        <div class="problem-outer">
+        <h2>Problem #229</h2>
+        <p>Tags: <a href='../tags/breadth first search.html'>breadth first search</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>Suppose a breadth-first search is performed on the following tree, starting at the root node <span class="math">\(s\)</span>:</p>
+<center><div class="image"><img src="../images/229/tree.png" /></div></center>
+<p>What is the most number of nodes that can be in the queue at any one time?</p>
+<p>
+<span class="inline-response-box">
+    <span id="answer-3bec8d14-6a4d-460c-a37f-1bc4af755021" style="display: none">8</span>
+    <span id="button-3bec8d14-6a4d-460c-a37f-1bc4af755021">
+        <button
+            type="button"
+            onclick="
+                document.getElementById('answer-3bec8d14-6a4d-460c-a37f-1bc4af755021').style.display = 'inline-block';
+                document.getElementById('button-3bec8d14-6a4d-460c-a37f-1bc4af755021').style.display = 'none'
+            "
+        >
+            Show Answer
+        </button>
+    </span>
+</span>
+</p>
+    </div>
+</div>
+
+        </div>
+
+
+
+
+        <div class="problem-outer">
+        <h2>Problem #230</h2>
+        <p>Tags: <a href='../tags/breadth first search.html'>breadth first search</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>Consider the code below, which is a modification of the BFS algorithm presented in lecture: there are two new lines, marked with comments.</p>
+<pre class="code"><code>
+
+from collections import deque
+
+def modified_bfs(graph, source):
+    """Start a BFS at `source`."""
+    status = {node: 'undiscovered' for node in graph.nodes}
+    status[source] = 'pending'
+    pending = deque([source])
+
+    while pending:
+        u = pending.popleft()
+        for v in graph.neighbors(u):
+
+            for node in graph.nodes:  # < -- this is the modification
+                print(status[node])   # < -- this is the modification
+
+            if status[v] == 'undiscovered':
+                status[v] = 'pending'
+                pending.append(v)
+
+        status[u] = 'visited'
+
+</code></pre>
+
+<p>What is the time complexity of this algorithm, in terms of <span class="math">\(|V|\)</span> and <span class="math">\(|E|\)</span>? You may assume the graph is undirected and connected, so that all nodes are reachable from the source.</p>
+<div class="multiple-choices"><form><div class="choice"><label><input name="choice" class="choice" type="radio" /><p><span class="math">\(\Theta(1)\)</span></p></label></div>
+<div class="choice"><label><input name="choice" class="choice" type="radio" /><p><span class="math">\(\Theta(V)\)</span></p></label></div>
+<div class="choice"><label><input name="choice" class="choice" type="radio" /><p><span class="math">\(\Theta(E)\)</span></p></label></div>
+<div class="choice"><label><input name="choice" class="choice" type="radio" /><p><span class="math">\(\Theta(V + E)\)</span></p></label></div>
+<div class="choice"><label><input name="choice" class="choice" type="radio" /><p><span class="math">\(\Theta(V E + V)\)</span></p></label></div></form></div>
+<details>
+    <summary>Solution</summary>
+<p>Because the graph is connected, <span class="math">\(|E| \geq |V| - 1\)</span>, and so <span class="math">\(\Theta(VE)\)</span> and <span class="math">\(\Theta(VE + V)\)</span> are equivalent. Only <span class="math">\(\Theta(VE + V)\)</span> is an option so <span class="math">\(\Theta(VE + V)\)</span> is the correct answer.</p>
+</details>
+
+    </div>
+</div>
+
+        </div>
+
+
+
                     </main>
                 </div>
             </div>

@@ -735,6 +735,641 @@ def foo(n):
 
 
 
+
+        <div class="problem-outer">
+        <h2>Problem #165</h2>
+        <p>Tags: <a href='../tags/time complexity.html'>time complexity</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>What is the time complexity of the following function? State your answer as a function of <span class="math">\(n\)</span> using asymptotic notation in the simplest form possible. (e.g., <span class="math">\(\Theta(n)\)</span>)</p>
+<pre class="code"><code>
+def boo(n):
+    for i in range(200, n):
+        for j in range(i, i * n):
+            print(i + j)
+
+boo(202)
+
+</code></pre>
+
+<p>
+<span class="inline-response-box">
+    <span id="answer-6bfc966f-16aa-4b73-8ba4-f41350f3bcfa" style="display: none"><span class="math">\(\Theta(n^3)\)</span></span>
+    <span id="button-6bfc966f-16aa-4b73-8ba4-f41350f3bcfa">
+        <button
+            type="button"
+            onclick="
+                document.getElementById('answer-6bfc966f-16aa-4b73-8ba4-f41350f3bcfa').style.display = 'inline-block';
+                document.getElementById('button-6bfc966f-16aa-4b73-8ba4-f41350f3bcfa').style.display = 'none'
+            "
+        >
+            Show Answer
+        </button>
+    </span>
+</span>
+</p>
+<details>
+    <summary>Solution</summary>
+<p>If you count the number of times the inner loop body executes, you'll get something like <span class="math">\(n + 2n + 3n + \ldots + n\times n\)</span>. Factoring out the <span class="math">\(n\)</span> and using the formula for the sum of the first <span class="math">\(n\)</span> integers, we get <span class="math">\(n (1 + 2 + 3 + \ldots + n) = n \Theta(n^2) = \Theta(n^3)\)</span>.</p>
+</details>
+
+    </div>
+</div>
+
+        </div>
+
+
+
+
+        <div class="problem-outer">
+        <h2>Problem #166</h2>
+        <p>Tags: <a href='../tags/time complexity.html'>time complexity</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>What is the time complexity of the following function? State your answer as a function of <span class="math">\(n\)</span> using asymptotic notation in the simplest form possible. (e.g., <span class="math">\(\Theta(n)\)</span>)</p>
+<pre class="code"><code>
+import math
+
+def boo(n):
+    i = n
+    while i > 1:
+        i = i / 2
+        for j in range(1_000_000):
+            print(i + j)
+
+boo(100)
+
+</code></pre>
+
+<p>
+<span class="inline-response-box">
+    <span id="answer-2a766422-188e-4305-a9c6-96e9f6028cb5" style="display: none"><span class="math">\(\Theta(\log n)\)</span></span>
+    <span id="button-2a766422-188e-4305-a9c6-96e9f6028cb5">
+        <button
+            type="button"
+            onclick="
+                document.getElementById('answer-2a766422-188e-4305-a9c6-96e9f6028cb5').style.display = 'inline-block';
+                document.getElementById('button-2a766422-188e-4305-a9c6-96e9f6028cb5').style.display = 'none'
+            "
+        >
+            Show Answer
+        </button>
+    </span>
+</span>
+</p>
+    </div>
+</div>
+
+        </div>
+
+
+
+
+        <div class="problem-outer">
+        <h2>Problem #168</h2>
+        <p>Tags: <a href='../tags/time complexity.html'>time complexity</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>What is the time complexity of the following function? State your answer as a function of <span class="math">\(n\)</span> using asymptotic notation in the simplest form possible. (e.g., <span class="math">\(\Theta(n)\)</span>)</p>
+<pre class="code"><code>
+import math
+
+def boo(n):
+    for i in range(n):
+        for j in range(n):
+            print(i + j)
+
+    for i in range(math.floor(math.sqrt(n))):
+        for j in range(math.log2(i), i * math.floor(math.log2(i + 10))):
+            print(i + j)
+
+</code></pre>
+
+<p>
+<span class="inline-response-box">
+    <span id="answer-751c9ee5-f88b-4249-87cd-ddc19f6bd0c2" style="display: none"><span class="math">\(\Theta(n^2)\)</span></span>
+    <span id="button-751c9ee5-f88b-4249-87cd-ddc19f6bd0c2">
+        <button
+            type="button"
+            onclick="
+                document.getElementById('answer-751c9ee5-f88b-4249-87cd-ddc19f6bd0c2').style.display = 'inline-block';
+                document.getElementById('button-751c9ee5-f88b-4249-87cd-ddc19f6bd0c2').style.display = 'none'
+            "
+        >
+            Show Answer
+        </button>
+    </span>
+</span>
+</p>
+<details>
+    <summary>Solution</summary>
+<p>The second loop looks complicated to analyze, but we can effectively ignore it. This is because the most <span class="inline-code"><code>i</code></span> can ever be is <span class="math">\(\sqrt
+        n\)</span>, and so an upper bound for the number of iterations made by the second loop is <span class="math">\(O(\sqrt n \log n)\)</span>. Since the first loop takes <span class="math">\(\Theta(n^2)\)</span>, it will dominate the time complexity, and we do not need to worry about the time taken by the second loop.</p>
+</details>
+
+    </div>
+</div>
+
+        </div>
+
+
+
+
+        <div class="problem-outer">
+        <h2>Problem #176</h2>
+        <p>Tags: <a href='../tags/time complexity.html'>time complexity</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<pre class="code"><code>
+import math
+
+def mediansort(arr, start, stop):
+    """Claims to sort the array, in-place"""
+    if stop - start <= 1:
+        return
+
+    # finds the index of the median of arr[start:stop]
+    median_ix = find_median(arr, start, stop)
+
+    middle_ix = math.floor((start + stop) / 2)
+
+    # move the median to the middle by swapping
+    arr[median_ix], arr[middle_ix] = arr[middle_ix], arr[median_ix]
+
+    # recurse on the left and right halves
+    mediansort(arr, start, middle_ix)
+    mediansort(arr, middle_ix + 1, stop)
+
+</code></pre>
+
+<p>Consider the <span class="inline-code"><code>mediansort</code></span> function from above. Suppose that <span class="inline-code"><code>find_median</code></span> takes <span class="math">\(\Theta(n)\)</span> time. What is the time complexity of <span class="inline-code"><code>mediansort</code></span>?</p>
+<p>
+<span class="inline-response-box">
+    <span id="answer-95881795-9a3a-4b83-b107-02ab9f74a340" style="display: none"><span class="math">\(\Theta(n \log n)\)</span></span>
+    <span id="button-95881795-9a3a-4b83-b107-02ab9f74a340">
+        <button
+            type="button"
+            onclick="
+                document.getElementById('answer-95881795-9a3a-4b83-b107-02ab9f74a340').style.display = 'inline-block';
+                document.getElementById('button-95881795-9a3a-4b83-b107-02ab9f74a340').style.display = 'none'
+            "
+        >
+            Show Answer
+        </button>
+    </span>
+</span>
+</p>
+    </div>
+</div>
+
+        </div>
+
+
+
+
+        <div class="problem-outer">
+        <h2>Problem #179</h2>
+        <p>Tags: <a href='../tags/time complexity.html'>time complexity</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>What is the <b>expected</b> time complexity of the following function? State your answer using asymptotic notation.</p>
+<pre class="code"><code>
+import random
+
+def boo(n):
+    # draw a number uniformly at random from 0, 1, 2, ..., n-1 in Theta(1)
+    x = random.randrange(n)
+
+    for i in range(x): # <-- note that the range is random!
+        print(i)
+
+</code></pre>
+
+<p>
+<span class="inline-response-box">
+    <span id="answer-4795213e-2124-4603-a0a5-aaa34956697e" style="display: none"><span class="math">\(\Theta(n)\)</span></span>
+    <span id="button-4795213e-2124-4603-a0a5-aaa34956697e">
+        <button
+            type="button"
+            onclick="
+                document.getElementById('answer-4795213e-2124-4603-a0a5-aaa34956697e').style.display = 'inline-block';
+                document.getElementById('button-4795213e-2124-4603-a0a5-aaa34956697e').style.display = 'none'
+            "
+        >
+            Show Answer
+        </button>
+    </span>
+</span>
+</p>
+    </div>
+</div>
+
+        </div>
+
+
+
+
+        <div class="problem-outer">
+        <h2>Problem #180</h2>
+        <p>Tags: <a href='../tags/time complexity.html'>time complexity</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>What is the time complexity of the following function? State your answer as a function of <span class="math">\(n\)</span> using asymptotic notation in the simplest form possible. (e.g., <span class="math">\(\Theta(n)\)</span>)</p>
+<pre class="code"><code>
+import math
+def boo(n):
+    for i in range(n):
+        for j in range(n**2 + 100, 500*n**3):
+            for k in range(1_000, math.floor(math.log(n))):
+                print(i + j + k)
+
+boo(100)
+
+</code></pre>
+
+<p>
+<span class="inline-response-box">
+    <span id="answer-79385944-45f1-4f3b-9ba2-afdb7980f4fe" style="display: none"><span class="math">\(\Theta(n^4 \log n)\)</span></span>
+    <span id="button-79385944-45f1-4f3b-9ba2-afdb7980f4fe">
+        <button
+            type="button"
+            onclick="
+                document.getElementById('answer-79385944-45f1-4f3b-9ba2-afdb7980f4fe').style.display = 'inline-block';
+                document.getElementById('button-79385944-45f1-4f3b-9ba2-afdb7980f4fe').style.display = 'none'
+            "
+        >
+            Show Answer
+        </button>
+    </span>
+</span>
+</p>
+    </div>
+</div>
+
+        </div>
+
+
+
+
+        <div class="problem-outer">
+        <h2>Problem #186</h2>
+        <p>Tags: <a href='../tags/time complexity.html'>time complexity</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>Suppose <span class="inline-code"><code>bar</code></span> and <span class="inline-code"><code>baz</code></span> are two functions. Suppose <span class="inline-code"><code>bar</code></span>'s time complexity is <span class="math">\(\Theta(n^3)\)</span>, while <span class="inline-code"><code>baz</code></span>'s time complexity is <span class="math">\(\Theta(n^2)\)</span>.</p>
+<p>Suppose <span class="inline-code"><code>boo</code></span> is defined as below:</p>
+<pre class="code"><code>
+
+def boo(n):
+    if n < 1000:
+        bar(n)
+    else:
+        baz(n)
+
+</code></pre>
+
+<p>What is the asymptotic time complexity of <span class="inline-code"><code>boo</code></span>?</p>
+<p>
+<span class="inline-response-box">
+    <span id="answer-c70ca212-9d44-4d9d-bccd-7d61f6c7a0d1" style="display: none"><span class="math">\(\Theta(n^2)\)</span></span>
+    <span id="button-c70ca212-9d44-4d9d-bccd-7d61f6c7a0d1">
+        <button
+            type="button"
+            onclick="
+                document.getElementById('answer-c70ca212-9d44-4d9d-bccd-7d61f6c7a0d1').style.display = 'inline-block';
+                document.getElementById('button-c70ca212-9d44-4d9d-bccd-7d61f6c7a0d1').style.display = 'none'
+            "
+        >
+            Show Answer
+        </button>
+    </span>
+</span>
+</p>
+<details>
+    <summary>Solution</summary>
+<p>Asymptotic time complexity concerns the time taken when <span class="math">\(n\)</span> is large. Therefore, it doesn't matter what happens when <span class="math">\(n < 1000\)</span>. When <span class="math">\(n \geq 1000\)</span>, the time taken is <span class="math">\(\Theta(n^2)\)</span>, since that is the time taken by <span class="inline-code"><code>baz</code></span>.</p>
+</details>
+
+    </div>
+</div>
+
+        </div>
+
+
+
+
+        <div class="problem-outer">
+        <h2>Problem #188</h2>
+        <p>Tags: <a href='../tags/time complexity.html'>time complexity</a>, <a href='../tags/binary search trees.html'>binary search trees</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>Suppose a collection of unique numbers is stored in a <b>balanced</b> binary search tree, and that each node in the tree has been given a <span class="inline-code"><code>.size</code></span> attribute which contains the number of nodes in the subtree rooted at that node. What is the time complexity required of an efficient algorithm for computing the number of elements in the collection which are larger than some threshold, <span class="math">\(t\)</span>?</p>
+<p>
+<span class="inline-response-box">
+    <span id="answer-4148c9a4-e1a2-4975-b04b-215e6f20246f" style="display: none"><span class="math">\(\Theta(\log n)\)</span></span>
+    <span id="button-4148c9a4-e1a2-4975-b04b-215e6f20246f">
+        <button
+            type="button"
+            onclick="
+                document.getElementById('answer-4148c9a4-e1a2-4975-b04b-215e6f20246f').style.display = 'inline-block';
+                document.getElementById('button-4148c9a4-e1a2-4975-b04b-215e6f20246f').style.display = 'none'
+            "
+        >
+            Show Answer
+        </button>
+    </span>
+</span>
+</p>
+    </div>
+</div>
+
+        </div>
+
+
+
+
+        <div class="problem-outer">
+        <h2>Problem #189</h2>
+        <p>Tags: <a href='../tags/time complexity.html'>time complexity</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>What is the time complexity of the following function in terms of <span class="math">\(n\)</span>? State your answer using asymptotic notation (e.g., <span class="math">\(\Theta(n)\)</span>) in the simplest terms possible.</p>
+<pre class="code"><code>
+def foo(n):
+    for i in range(n):
+        for j in range(2023):
+            for k in range(n - i):
+                print("DSC40B")
+
+</code></pre>
+
+<p>
+<span class="inline-response-box">
+    <span id="answer-aef94ecc-21b3-47e9-a315-add782210153" style="display: none"><span class="math">\(\Theta(n^2)\)</span></span>
+    <span id="button-aef94ecc-21b3-47e9-a315-add782210153">
+        <button
+            type="button"
+            onclick="
+                document.getElementById('answer-aef94ecc-21b3-47e9-a315-add782210153').style.display = 'inline-block';
+                document.getElementById('button-aef94ecc-21b3-47e9-a315-add782210153').style.display = 'none'
+            "
+        >
+            Show Answer
+        </button>
+    </span>
+</span>
+</p>
+    </div>
+</div>
+
+        </div>
+
+
+
+
+        <div class="problem-outer">
+        <h2>Problem #190</h2>
+        <p>Tags: <a href='../tags/time complexity.html'>time complexity</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>Suppose numbers is a list of integers of length <span class="math">\(n\)</span>. What is the time complexity of the following function in terms of <span class="math">\(n\)</span>? State your answer using asymptotic notation (e.g., <span class="math">\(\Theta(n)\)</span>) in the simplest terms possible.</p>
+<pre class="code"><code>
+def foo(numbers):
+    for x in numbers:
+        r = max(numbers) * min(numbers) * x
+        print(r)
+
+</code></pre>
+
+<p>
+<span class="inline-response-box">
+    <span id="answer-8399aa19-5567-43a7-83fd-cc4fdc460e83" style="display: none"><span class="math">\(\Theta(n^2)\)</span></span>
+    <span id="button-8399aa19-5567-43a7-83fd-cc4fdc460e83">
+        <button
+            type="button"
+            onclick="
+                document.getElementById('answer-8399aa19-5567-43a7-83fd-cc4fdc460e83').style.display = 'inline-block';
+                document.getElementById('button-8399aa19-5567-43a7-83fd-cc4fdc460e83').style.display = 'none'
+            "
+        >
+            Show Answer
+        </button>
+    </span>
+</span>
+</p>
+    </div>
+</div>
+
+        </div>
+
+
+
+
+        <div class="problem-outer">
+        <h2>Problem #192</h2>
+        <p>Tags: <a href='../tags/time complexity.html'>time complexity</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>What is the time complexity of the following function in terms of <span class="math">\(n\)</span>? State your answer using asymptotic notation (e.g., <span class="math">\(\Theta(n)\)</span>) in the simplest terms possible.</p>
+<pre class="code"><code>
+def foo(n):
+    i = 1
+    while i < n**3:
+        i = i * 2
+        for j in range(n):
+            print(i + j)
+
+</code></pre>
+
+<p>
+<span class="inline-response-box">
+    <span id="answer-95716fe2-031c-4345-819f-bd7abff9e86c" style="display: none"><span class="math">\(\Theta(n\log n)\)</span></span>
+    <span id="button-95716fe2-031c-4345-819f-bd7abff9e86c">
+        <button
+            type="button"
+            onclick="
+                document.getElementById('answer-95716fe2-031c-4345-819f-bd7abff9e86c').style.display = 'inline-block';
+                document.getElementById('button-95716fe2-031c-4345-819f-bd7abff9e86c').style.display = 'none'
+            "
+        >
+            Show Answer
+        </button>
+    </span>
+</span>
+</p>
+    </div>
+</div>
+
+        </div>
+
+
+
+
+        <div class="problem-outer">
+        <h2>Problem #194</h2>
+        <p>Tags: <a href='../tags/time complexity.html'>time complexity</a>, <a href='../tags/binary search trees.html'>binary search trees</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>Suppose a collection of <span class="math">\(n\)</span> numbers is stored in a balanced binary search tree. What is the time complexity required of an efficient algorithm to calculate the mean of the collection? State your answer as a function of <span class="math">\(n\)</span> in asymptotic notation.</p>
+<p>
+<span class="inline-response-box">
+    <span id="answer-b76ea9aa-0562-41d2-9eb5-0e3e3d1e69b8" style="display: none"><span class="math">\(\Theta(n)\)</span></span>
+    <span id="button-b76ea9aa-0562-41d2-9eb5-0e3e3d1e69b8">
+        <button
+            type="button"
+            onclick="
+                document.getElementById('answer-b76ea9aa-0562-41d2-9eb5-0e3e3d1e69b8').style.display = 'inline-block';
+                document.getElementById('button-b76ea9aa-0562-41d2-9eb5-0e3e3d1e69b8').style.display = 'none'
+            "
+        >
+            Show Answer
+        </button>
+    </span>
+</span>
+</p>
+    </div>
+</div>
+
+        </div>
+
+
+
+
+        <div class="problem-outer">
+        <h2>Problem #200</h2>
+        <p>Tags: <a href='../tags/time complexity.html'>time complexity</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>What is the <b>expected</b> time complexity of the function below? State your answer using asymptotic notation.</p>
+<pre class="code"><code>
+import random
+def foo(n):
+    # draw a number uniformly at random from 0, 1, 2, ..., n-1 in Theta(1) time
+    x = random.randrange(n)
+    if x < 20:
+        for i in range(n**3):
+            print("Very unlucky!")
+    elif x < n / 2:
+        for i in range(n):
+            print("Unlucky!")
+    else:
+        print("Lucky!")
+
+</code></pre>
+
+<p>
+        <span class="inline-response-box">
+            <span id="answer-23ba021f-d985-4c27-a2dd-df5c6b538e45" style="display: none"><span class="math">\(\Theta(n^2)\)</span>
+.</span>
+            <span id="button-23ba021f-d985-4c27-a2dd-df5c6b538e45">
+                <button
+                    type="button"
+                    onclick="
+                        document.getElementById('answer-23ba021f-d985-4c27-a2dd-df5c6b538e45').style.display = 'inline-block';
+                        document.getElementById('button-23ba021f-d985-4c27-a2dd-df5c6b538e45').style.display = 'none'
+                    "
+                >
+                    Show Answer
+                </button>
+            </span>
+        </span>
+</p>
+    </div>
+</div>
+
+        </div>
+
+
+
+
+        <div class="problem-outer">
+        <h2>Problem #203</h2>
+        <p>Tags: <a href='../tags/time complexity.html'>time complexity</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>What is the time complexity of the following function in terms of <span class="math">\(n\)</span>? State your answer using asymptotic notation (e.g., <span class="math">\(\Theta(n)\)</span>) in the simplest terms possible.</p>
+<pre class="code"><code>
+import math
+def foo(n):
+    for i in range(3 * n**3 + 5 * n * math.ceil(math.log(n))):
+        for j in range(math.floor(math.sqrt(n))):
+            print(i + j)
+        for k in range(n**2):
+            print(k * i)
+
+</code></pre>
+
+<p>
+<span class="inline-response-box">
+    <span id="answer-d02faad8-0b2e-4c9a-8171-2a52d1d04fd8" style="display: none"><span class="math">\(\Theta(n^5)\)</span></span>
+    <span id="button-d02faad8-0b2e-4c9a-8171-2a52d1d04fd8">
+        <button
+            type="button"
+            onclick="
+                document.getElementById('answer-d02faad8-0b2e-4c9a-8171-2a52d1d04fd8').style.display = 'inline-block';
+                document.getElementById('button-d02faad8-0b2e-4c9a-8171-2a52d1d04fd8').style.display = 'none'
+            "
+        >
+            Show Answer
+        </button>
+    </span>
+</span>
+</p>
+    </div>
+</div>
+
+        </div>
+
+
+
+
+        <div class="problem-outer">
+        <h2>Problem #206</h2>
+        <p>Tags: <a href='../tags/time complexity.html'>time complexity</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>Suppose <span class="inline-code"><code>bar_1</code></span>, <span class="inline-code"><code>bar_2</code></span> and <span class="inline-code"><code>bar_3</code></span> are three functions. Suppose <span class="inline-code"><code>bar_1</code></span>'s time complexity is <span class="math">\(\Theta(n)\)</span>, <span class="inline-code"><code>bar_2</code></span>'s time complexity is <span class="math">\(\Theta(n^2)\)</span>, and <span class="inline-code"><code>bar_3</code></span>'s time complexity is <span class="math">\(\Theta(n^3)\)</span>.</p>
+<p>Suppose <span class="inline-code"><code>foo</code></span> is defined as below:</p>
+<pre class="code"><code>
+def foo(n):
+    if n < 2023:
+        bar_1(n**3)
+    elif n == 2023:
+        bar_3(n**2)
+    else:
+        bar_2(n)
+
+</code></pre>
+
+<p>What is the asymptotic time complexity of <span class="inline-code"><code>foo</code></span>?</p>
+<p>
+<span class="inline-response-box">
+    <span id="answer-c8044fd6-6992-4ea6-8397-29566acba6c5" style="display: none"><span class="math">\(\Theta(n^2)\)</span></span>
+    <span id="button-c8044fd6-6992-4ea6-8397-29566acba6c5">
+        <button
+            type="button"
+            onclick="
+                document.getElementById('answer-c8044fd6-6992-4ea6-8397-29566acba6c5').style.display = 'inline-block';
+                document.getElementById('button-c8044fd6-6992-4ea6-8397-29566acba6c5').style.display = 'none'
+            "
+        >
+            Show Answer
+        </button>
+    </span>
+</span>
+</p>
+<details>
+    <summary>Solution</summary>
+<p>Asymptotic time complexity concerns the time taken when <span class="math">\(n\)</span> is large. Therefore, it doesn't matter what happens when <span class="math">\(n < 1000\)</span>. When <span class="math">\(n \geq 1000\)</span>, the time taken is <span class="math">\(\Theta(n^2)\)</span>, since that is the time taken by <span class="inline-code"><code>bar_2</code></span>.</p>
+</details>
+
+    </div>
+</div>
+
+        </div>
+
+
+
                     </main>
                 </div>
             </div>

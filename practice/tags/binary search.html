@@ -500,6 +500,53 @@ def new_binary_search(arr, start, stop, target):
 
 
 
+
+        <div class="problem-outer">
+        <h2>Problem #170</h2>
+        <p>Tags: <a href='../tags/binary search.html'>binary search</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>Consider the version of binary search shown below. This is the same as the code given in lecture, except that a single <span class="inline-code"><code>print</code></span> statement has been added. This <span class="inline-code"><code>print</code></span> statement prints the value of <span class="inline-code"><code>stop</code></span> at the beginning of each call to <span class="inline-code"><code>binary_search</code></span>.</p>
+<pre class="code"><code>
+
+import math
+def binary_search(arr, t, start, stop):
+    """
+    Searches arr[start:stop] for t.
+    Assumes arr is sorted.
+    """
+    print(stop) # <-- added print statement
+    if stop - start <= 0:
+        return None
+    middle = math.floor((start + stop)/2)
+    if arr[middle] == t:
+        return middle
+    elif arr[middle] > t:
+        return binary_search(arr, t, start, middle)
+    else:
+        return binary_search(arr, t, middle+1, stop)
+
+</code></pre>
+
+<p>Suppose <span class="inline-code"><code>binary_search</code></span> is called on a <b>sorted</b> list with <span class="inline-code"><code>start = 0</code></span> and <span class="inline-code"><code>stop = len(n)</code></span>. True or False: the numbers printed must be a non-increasing sequence. That is, if <span class="math">\(x\)</span> is printed before <span class="math">\(y\)</span>, then it must be the case that <span class="math">\(x \geq y\)</span>.</p>
+
+<div class="true-false">
+    <input type="radio" name="true-false" value="true" /> True
+    <input type="radio" name="true-false" value="false" /> False
+</div>
+
+<details>
+    <summary>Solution</summary>
+<p>True</p>
+</details>
+
+    </div>
+</div>
+
+        </div>
+
+
+
                     </main>
                 </div>
             </div>

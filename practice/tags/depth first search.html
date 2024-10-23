@@ -573,6 +573,137 @@ def dfs(graph, u, status=None):
 
 
 
+
+        <div class="problem-outer">
+        <h2>Problem #213</h2>
+        <p>Tags: <a href='../tags/depth first search.html'>depth first search</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>A modification of the <span class="inline-code"><code>dfs</code></span> function from lecture is shown below. It is the same as the original <span class="inline-code"><code>dfs</code></span> function, except that it has an added <span class="inline-code"><code>print</code></span> statement.</p>
+<pre class="code"><code>
+
+def dfs(graph, u, status=None):
+    """Start a DFS at `u`."""
+    # initialize status if it was not passed
+    if status is None:
+        status = {node: 'undiscovered' for node in graph.nodes}
+    status[u] = 'pending'
+    for v in graph.neighbors(u):
+        print("Hello!")
+        if status[v] == 'undiscovered':
+            dfs(graph, v, status)
+    status[u] = 'visited'
+
+</code></pre>
+
+<p>Consider running this algorithm on the following graph, starting at node <span class="math">\(a\)</span>:</p>
+<center><div class="image"><img src="../images/213/graph.png" /></div></center>
+<p>How many times will <span class="inline-code"><code>"Hello!"</code></span> be printed? Note that this is not a full DFS, and that not all nodes are reachable from <span class="math">\(a\)</span>.</p>
+<p>
+<span class="inline-response-box">
+    <span id="answer-337c8456-7af1-4edd-be5b-e5468846d6f7" style="display: none">10</span>
+    <span id="button-337c8456-7af1-4edd-be5b-e5468846d6f7">
+        <button
+            type="button"
+            onclick="
+                document.getElementById('answer-337c8456-7af1-4edd-be5b-e5468846d6f7').style.display = 'inline-block';
+                document.getElementById('button-337c8456-7af1-4edd-be5b-e5468846d6f7').style.display = 'none'
+            "
+        >
+            Show Answer
+        </button>
+    </span>
+</span>
+</p>
+    </div>
+</div>
+
+        </div>
+
+
+
+
+        <div class="problem-outer">
+        <h2>Problem #214</h2>
+        <p>Tags: <a href='../tags/depth first search.html'>depth first search</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>True or False: a depth first search with source node <span class="math">\(s\)</span> is guaranteed to find the <i>longest</i> simple path starting from <span class="math">\(s\)</span> in a connected, undirected graph <span class="math">\(G\)</span> That is, suppose that there is a unique longest simple path in <span class="math">\(G\)</span>, and call this path <span class="math">\(p\)</span>. True or False: the longest simple path in the DFS forest must be also be <span class="math">\(p\)</span>.</p>
+
+<div class="true-false">
+    <input type="radio" name="true-false" value="true" /> True
+    <input type="radio" name="true-false" value="false" /> False
+</div>
+
+<details>
+    <summary>Solution</summary>
+<p>False</p>
+</details>
+
+    </div>
+</div>
+
+        </div>
+
+
+
+
+        <div class="problem-outer">
+        <h2>Problem #216</h2>
+        <p>Tags: <a href='../tags/depth first search.html'>depth first search</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>Suppose a depth first search (DFS) is run on the graph below, starting at node <span class="math">\(a\)</span>. Start and finish times are calculated using the convention that the start time of node <span class="math">\(a\)</span> is 1.</p>
+<center><div class="image"><img src="../images/216/graph.png" /></div></center>
+<p>What will be the finish time of node <span class="math">\(e\)</span>? Assume the convention that a node's neighbors are produced in alphabetical order.</p>
+<p>
+<span class="inline-response-box">
+    <span id="answer-31ad67d4-2422-437d-8732-514b8e46b157" style="display: none">13</span>
+    <span id="button-31ad67d4-2422-437d-8732-514b8e46b157">
+        <button
+            type="button"
+            onclick="
+                document.getElementById('answer-31ad67d4-2422-437d-8732-514b8e46b157').style.display = 'inline-block';
+                document.getElementById('button-31ad67d4-2422-437d-8732-514b8e46b157').style.display = 'none'
+            "
+        >
+            Show Answer
+        </button>
+    </span>
+</span>
+</p>
+    </div>
+</div>
+
+        </div>
+
+
+
+
+        <div class="problem-outer">
+        <h2>Problem #217</h2>
+        <p>Tags: <a href='../tags/depth first search.html'>depth first search</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>Suppose that a depth first search is being performed on an <b>undirected</b> graph, and when <span class="inline-code"><code>dfs</code></span> is called on a node <span class="math">\(u\)</span>, the statuses of all of its neighbors are printed. True or False: it is possible that one of the neighbors is marked as ``visited''.</p>
+
+<div class="true-false">
+    <input type="radio" name="true-false" value="true" /> True
+    <input type="radio" name="true-false" value="false" /> False
+</div>
+
+<details>
+    <summary>Solution</summary>
+<p>False</p>
+</details>
+
+    </div>
+</div>
+
+        </div>
+
+
+
                     </main>
                 </div>
             </div>

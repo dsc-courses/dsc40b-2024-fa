@@ -247,6 +247,60 @@ def merge(left, right, out):
 
 
 
+
+        <div class="problem-outer">
+        <h2>Problem #193</h2>
+        <p>Tags: <a href='../tags/mergesort.html'>mergesort</a></p>
+        <div class="problem">
+    <div class="problem-body">
+<p>Below is the <span class="inline-code"><code>merge</code></span> function from the <span class="inline-code"><code>mergesort</code></span> algorithm, with an added <span class="inline-code"><code>print</code></span> statement:</p>
+<pre class="code"><code>
+
+def merge(left, right, out):
+    """Merge sorted arrays, store in out."""
+    print(len(left))
+    print(len(right))
+    left.append(float('inf'))
+    right.append(float('inf'))
+    left_ix = 0
+    right_ix = 0
+
+    for ix in range(len(out)):
+        if left[left_ix] < right[right_ix]:
+            out[ix] = left[left_ix]
+            left_ix += 1
+        else:
+            out[ix] = right[right_ix]
+            right_ix += 1
+
+</code></pre>
+
+<p>Suppose this version of <span class="inline-code"><code>merge</code></span> is used in <span class="inline-code"><code>mergesort</code></span>, and <span class="inline-code"><code>mergesort</code></span> is called on the following list:</p>
+<p><span class="inline-code"><code>[6, 2, 7, 1, 9, 3, 8, 5]</code></span>.</p>
+<p>If all of the numbers that are printed are added up, what will the sum be?</p>
+<p>
+<span class="inline-response-box">
+    <span id="answer-28701993-0e3e-433b-b575-965c840fde3b" style="display: none">24</span>
+    <span id="button-28701993-0e3e-433b-b575-965c840fde3b">
+        <button
+            type="button"
+            onclick="
+                document.getElementById('answer-28701993-0e3e-433b-b575-965c840fde3b').style.display = 'inline-block';
+                document.getElementById('button-28701993-0e3e-433b-b575-965c840fde3b').style.display = 'none'
+            "
+        >
+            Show Answer
+        </button>
+    </span>
+</span>
+</p>
+    </div>
+</div>
+
+        </div>
+
+
+
                     </main>
                 </div>
             </div>
