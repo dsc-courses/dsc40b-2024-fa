@@ -196,7 +196,11 @@
                         "topic": "Hashing",
                         "number": 9
                     },
-                    "artifacts": {}
+                    "artifacts": {
+                        "slides.pdf": {
+                            "path": "lectures/09-hashing/slides.pdf"
+                        }
+                    }
                 },
                 "10-graph_theory": {
                     "metadata": {
@@ -635,7 +639,14 @@
                         "topic": "Quickselect and BSTs",
                         "number": 4
                     },
-                    "artifacts": {}
+                    "artifacts": {
+                        "homework.pdf": {
+                            "path": "homeworks/04-quickselect-bst/homework.pdf"
+                        },
+                        "template.zip": {
+                            "path": "homeworks/04-quickselect-bst/template.zip"
+                        }
+                    }
                 },
                 "05-hashing": {
                     "metadata": {
