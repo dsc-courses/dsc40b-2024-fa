@@ -1,5 +1,144 @@
 {
     "collections": {
+        "discussions": {
+            "publication_schema": {
+                "required_artifacts": [
+                    "discussion.pdf",
+                    "solution.pdf"
+                ],
+                "optional_artifacts": [
+                    "slides.pdf"
+                ],
+                "metadata_schema": {
+                    "optional_keys": {
+                        "recording": {
+                            "type": "string",
+                            "nullable": true
+                        }
+                    },
+                    "required_keys": {
+                        "date": {
+                            "type": "date"
+                        },
+                        "topic": {
+                            "type": "string"
+                        },
+                        "number": {
+                            "type": "integer"
+                        }
+                    }
+                },
+                "allow_unspecified_artifacts": false,
+                "is_ordered": true
+            },
+            "publications": {
+                "01-time_complexity": {
+                    "metadata": {
+                        "date": "2024-10-04",
+                        "topic": "Time Complexity Analysis",
+                        "number": 1,
+                        "recording": null
+                    },
+                    "artifacts": {
+                        "discussion.pdf": {
+                            "path": "discussions/01-time_complexity/discussion.pdf"
+                        },
+                        "solution.pdf": {
+                            "path": "discussions/01-time_complexity/solution.pdf"
+                        }
+                    }
+                },
+                "02-best_worst_time": {
+                    "metadata": {
+                        "date": "2024-10-11",
+                        "topic": "Time Complexity and Recurrences",
+                        "number": 2,
+                        "recording": null
+                    },
+                    "artifacts": {
+                        "discussion.pdf": {
+                            "path": "discussions/02-best_worst_time/discussion.pdf"
+                        },
+                        "solution.pdf": {
+                            "path": "discussions/02-best_worst_time/solution.pdf"
+                        }
+                    }
+                },
+                "03-recursion_sorting": {
+                    "metadata": {
+                        "date": "2024-10-18",
+                        "topic": "Recurrence Relations and Sorting",
+                        "number": 3,
+                        "recording": null
+                    },
+                    "artifacts": {
+                        "discussion.pdf": {
+                            "path": "discussions/03-recursion_sorting/discussion.pdf"
+                        },
+                        "solution.pdf": {
+                            "path": "discussions/03-recursion_sorting/solution.pdf"
+                        }
+                    }
+                },
+                "04-midterm_01_review": {
+                    "metadata": {
+                        "date": "2024-10-25",
+                        "topic": "Midterm 01 Review",
+                        "number": 4,
+                        "recording": null
+                    },
+                    "artifacts": {
+                        "discussion.pdf": {
+                            "path": "discussions/04-midterm_01_review/discussion.pdf"
+                        }
+                    }
+                },
+                "05-hashing": {
+                    "metadata": {
+                        "date": "2024-11-01",
+                        "topic": "Hashing",
+                        "number": 5,
+                        "recording": null
+                    },
+                    "artifacts": {}
+                },
+                "06-graphs_bfs": {
+                    "metadata": {
+                        "date": "2024-11-15",
+                        "topic": "Graphs and BFS",
+                        "number": 6,
+                        "recording": "https://drive.google.com/file/d/1GKyCX_BiNuWRXjROamn409osu4hfM3E9/view?usp=sharing"
+                    },
+                    "artifacts": {}
+                },
+                "07-dfs": {
+                    "metadata": {
+                        "date": "2024-11-22",
+                        "topic": "DFS",
+                        "number": 7,
+                        "recording": null
+                    },
+                    "artifacts": {}
+                },
+                "08-bellman_ford": {
+                    "metadata": {
+                        "date": "2024-11-29",
+                        "topic": "Bellman-Ford",
+                        "number": 8,
+                        "recording": "https://drive.google.com/file/d/1Q3G6_VJCg4NLkO30r6k8kMNyI0hkHqak/view?usp=sharing"
+                    },
+                    "artifacts": {}
+                },
+                "09-prim_kruskal": {
+                    "metadata": {
+                        "date": "2024-12-13",
+                        "topic": "Prim, Kruskal, MST",
+                        "number": 9
+                    },
+                    "artifacts": {}
+                }
+            }
+        },
         "lectures": {
             "publication_schema": {
                 "required_artifacts": [
@@ -287,145 +426,6 @@
                         "date": "2023-12-07",
                         "topic": "Complexity Theory (Optional)",
                         "number": 18
-                    },
-                    "artifacts": {}
-                }
-            }
-        },
-        "discussions": {
-            "publication_schema": {
-                "required_artifacts": [
-                    "discussion.pdf",
-                    "solution.pdf"
-                ],
-                "optional_artifacts": [
-                    "slides.pdf"
-                ],
-                "metadata_schema": {
-                    "optional_keys": {
-                        "recording": {
-                            "type": "string",
-                            "nullable": true
-                        }
-                    },
-                    "required_keys": {
-                        "date": {
-                            "type": "date"
-                        },
-                        "topic": {
-                            "type": "string"
-                        },
-                        "number": {
-                            "type": "integer"
-                        }
-                    }
-                },
-                "allow_unspecified_artifacts": false,
-                "is_ordered": true
-            },
-            "publications": {
-                "01-time_complexity": {
-                    "metadata": {
-                        "date": "2024-10-04",
-                        "topic": "Time Complexity Analysis",
-                        "number": 1,
-                        "recording": null
-                    },
-                    "artifacts": {
-                        "discussion.pdf": {
-                            "path": "discussions/01-time_complexity/discussion.pdf"
-                        },
-                        "solution.pdf": {
-                            "path": "discussions/01-time_complexity/solution.pdf"
-                        }
-                    }
-                },
-                "02-best_worst_time": {
-                    "metadata": {
-                        "date": "2024-10-11",
-                        "topic": "Time Complexity and Recurrences",
-                        "number": 2,
-                        "recording": null
-                    },
-                    "artifacts": {
-                        "discussion.pdf": {
-                            "path": "discussions/02-best_worst_time/discussion.pdf"
-                        },
-                        "solution.pdf": {
-                            "path": "discussions/02-best_worst_time/solution.pdf"
-                        }
-                    }
-                },
-                "03-recursion_sorting": {
-                    "metadata": {
-                        "date": "2024-10-18",
-                        "topic": "Recurrence Relations and Sorting",
-                        "number": 3,
-                        "recording": null
-                    },
-                    "artifacts": {
-                        "discussion.pdf": {
-                            "path": "discussions/03-recursion_sorting/discussion.pdf"
-                        },
-                        "solution.pdf": {
-                            "path": "discussions/03-recursion_sorting/solution.pdf"
-                        }
-                    }
-                },
-                "04-midterm_01_review": {
-                    "metadata": {
-                        "date": "2024-10-25",
-                        "topic": "Midterm 01 Review",
-                        "number": 4,
-                        "recording": null
-                    },
-                    "artifacts": {
-                        "discussion.pdf": {
-                            "path": "discussions/04-midterm_01_review/discussion.pdf"
-                        }
-                    }
-                },
-                "05-hashing": {
-                    "metadata": {
-                        "date": "2024-11-01",
-                        "topic": "Hashing",
-                        "number": 5,
-                        "recording": null
-                    },
-                    "artifacts": {}
-                },
-                "06-graphs_bfs": {
-                    "metadata": {
-                        "date": "2024-11-15",
-                        "topic": "Graphs and BFS",
-                        "number": 6,
-                        "recording": "https://drive.google.com/file/d/1GKyCX_BiNuWRXjROamn409osu4hfM3E9/view?usp=sharing"
-                    },
-                    "artifacts": {}
-                },
-                "07-dfs": {
-                    "metadata": {
-                        "date": "2024-11-22",
-                        "topic": "DFS",
-                        "number": 7,
-                        "recording": null
-                    },
-                    "artifacts": {}
-                },
-                "08-bellman_ford": {
-                    "metadata": {
-                        "date": "2024-11-29",
-                        "topic": "Bellman-Ford",
-                        "number": 8,
-                        "recording": "https://drive.google.com/file/d/1Q3G6_VJCg4NLkO30r6k8kMNyI0hkHqak/view?usp=sharing"
-                    },
-                    "artifacts": {}
-                },
-                "09-prim_kruskal": {
-                    "metadata": {
-                        "date": "2024-12-13",
-                        "topic": "Prim, Kruskal, MST",
-                        "number": 9
                     },
                     "artifacts": {}
                 }
